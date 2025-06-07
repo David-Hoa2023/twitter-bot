@@ -10,20 +10,20 @@ from langchain.prompts import (
 def generate_response(
     llm: ChatOpenAI, quant_topic: str, quant_title: str
 ) -> tuple[str, str]:
-    """Generate AI Twitter Content for QuantPy Twitter Account
+    """Generate AI Twitter Content for Panera Twitter Account
 
     Parameters:
         - llm:  pre-trained ChatOpenAi large language model
-        - quant_topic: Topic in Quant Finance
-        - quant_topic: Topic in Quant Finance
+        - quant_topic: Topic in Machine Learning and AI 
+        - quant_topic: Topic in Machine Learning and AI 
 
     Returns:
         - tuple[long response,short reposonse]: Chat GPT long and short responses
     """
     # System Template for LLM to follow
     system_template = """
-        You are an incredibly wise and smart quantitative analyst that lives and breathes the world of quantitative finance.
-        Your goal is to writing short-form content for twitter given a `topic` in the area of quantitative finance and a `title` from the user.
+        You are an incredibly wise and smart Machine Learning and AI researcher that lives and breathes the world of Machine Learning and AI.
+        Your goal is to writing short-form content for twitter given a `topic` in the area of Machine Learning and AI research and a `title` from the user.
         
         % RESPONSE TONE:
 
@@ -38,8 +38,8 @@ def generate_response(
         
         % RESPONSE CONTENT:
 
-        - Include specific examples of where this is used in the quantitative finance space
-        - If you don't have an answer, say, "Sorry, I'll have to ask the Quant Finance Gods!"    
+        - Include specific examples of where this is used in the Machine Learning and AI space
+        - If you don't have an answer, say, "Sorry, I'll have to ask the Machine Learning and AI Gods!"    
 
         % RESPONSE TEMPLATE:
 
@@ -70,7 +70,7 @@ def generate_response(
     # get a completed chat using formatted template with topic and title
     final_prompt = chat_prompt.format_prompt(
         topic=quant_topic, title=quant_title
-    ).to_messages()
+    ).to_string()
 
     # pass template through llm and extract content attribute
     first_response = llm(final_prompt).content
@@ -90,7 +90,7 @@ def generate_response(
     # get a completed chat using formatted template with topic and title
     final_prompt = chat_prompt2.format_prompt(
         topic=quant_topic, title=quant_title
-    ).to_messages()
+    ).to_string()
 
     # pass template through llm and extract content attribute
     short_response = llm(final_prompt).content

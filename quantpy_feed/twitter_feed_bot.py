@@ -63,7 +63,7 @@ class TwitterBot:
         self.llm = ChatOpenAI(
             temperature=0.3,
             openai_api_key=OPENAI_API_KEY,
-            model_name="gpt-3.5-turbo-0613",
+            model_name="gpt-4-1106-preview",
         )
 
         self.text_file = TEXT_FILE
