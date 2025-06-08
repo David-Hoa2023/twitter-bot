@@ -1,4 +1,4 @@
-# quantpy-twitter-bot
+# twitter-bot
 
 This project automates the Twitter Feed of [QuantPy](https://twitter.com/TheQuantPy) using the OpenAI and Twitter API's.
 
